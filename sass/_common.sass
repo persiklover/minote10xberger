@@ -1,0 +1,127 @@
+::selection
+  background-color: $text-color 
+  color: $body-bg-color
+  
+body
+  color: $text-color
+  +roboto
+  font-size: 2rem
+
+abbr[title]
+  text-decoration: none
+
+.section
+  position: relative
+
+  color: black
+  +roboto
+  font-size: 2rem
+
+  &-title
+    margin: 0
+    margin-bottom: 3rem
+
+    +robotoBlack
+    font-size: 3rem
+    line-height: 4.9rem
+
+  &-chapter
+    margin-right: 2.5rem
+    padding: 1.5rem 1.9rem
+    background: black
+
+    color: #fff
+    +robotoLight
+    line-height: 4.9rem
+
+    &--inversed
+      background: white
+      color: black
+  
+  &__scrolldown
+    position: absolute
+    z-index: 3
+    left:   50%
+    bottom: 0
+    transform: translate(-50%, 50%)
+  
+  &-p
+    margin: 0
+    margin-bottom: 2.25rem
+
+.scrolldown
+  background-color: black
+  border-radius: 50%
+  border: 0.2rem solid #fff
+  width:  5.8rem
+  height: 5.8rem
+  display: flex
+  justify-content: center
+  align-items: center
+
+  cursor: pointer
+
+  &__icon
+    width:  1.4rem
+    height: 2.3rem
+
+.intro-group
+  display: flex
+  flex-direction: column
+
+  +robotoBlack
+  font-size: 3rem
+
+  &__title
+    margin-bottom: 1rem
+    font-style: normal
+  
+  &__subtitle
+    margin: 0
+
+    +roboto
+    font-size: 2rem
+
+.quote
+  padding: 0
+  margin: 0
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+
+  +sm
+    width: 48rem
+
+  &::before,
+  &::after
+    display: block
+    margin-top: -7.2rem
+
+    +robotoBlack
+    font-size: 17.7rem
+    line-height: 1
+
+    +no-select
+
+  &::before
+    content: '«'
+
+  &::after
+    content: '»'
+    align-self: flex-end
+
+.parallax
+  position: absolute
+  +no-select
+
+  +sm
+    display: none
+
+.sm-only
+  display: none
+  +sm
+    display: block
+
+.hide-sm
+  +sm
+    display: none

@@ -1,0 +1,202 @@
+.gallery
+  background: white
+  padding: 3.75rem 0 6.8rem
+
+  color: black
+
+  +sm
+    padding-bottom: 10rem
+
+  &-wrap
+    margin: 0 -12rem
+
+    +sm
+      margin: 0
+
+  &__title
+    margin: 0
+    margin-bottom: 6rem
+
+    color: #000
+    +roboto
+    font-size: 2rem
+    text-align: center
+  
+  &-slider
+
+    // If JavaScript is enabled
+    &.enabled
+      .gallery-slider-item
+        margin-bottom: 0
+
+    &-item
+      margin-bottom: 5rem
+    
+    .owl
+      // nav
+      &-prev,
+      &-next
+        width:  7rem
+        height: 7rem
+        background: none !important
+        position: absolute
+        top: 47.7rem
+        transform: translateY(-50%)
+
+        +sm
+          top: 110rem
+
+        img
+          width:  100%
+          height: 100%
+
+      &-prev
+        left: 0
+        margin-left: -9.5rem
+
+        +sm
+          left: 12rem
+          margin-left: 0
+
+        img
+          transform: rotate(180deg)
+
+      &-next
+        right: 0
+        margin-right: -9.5rem
+
+        +sm
+          right: 12rem
+          margin-right: 0
+    
+      // dots
+      &-dot
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-right: .5rem
+        width:  1.5rem
+        height: 1.5rem
+        background: black !important
+        border: .2rem solid black !important
+        border-radius: 50%
+
+        span
+          display: flex
+          width:  .5rem
+          height: .5rem
+          border-radius: 50%
+          background: black
+
+        &.active
+          background: white !important
+
+        &:last-child
+          margin-right: 0
+
+        &s
+          margin-top: 9.5rem
+          display: flex
+          justify-content: center
+          align-items: center
+
+  &-body
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    flex-wrap: wrap
+
+    +sm
+      justify-content: center
+
+    @media (min-width: 768px)
+      &--type1
+        li
+          &:nth-child(5n + 1),
+          &:nth-child(5n + 3),
+          &:nth-child(5n + 5)
+            align-items: flex-end
+
+          &:nth-child(5n + 2)
+            padding-top: 3.5rem
+
+      &--type2
+        li
+          &:nth-child(5n + 2),
+          &:nth-child(5n + 4)
+            align-items: flex-end
+
+          &:nth-child(5n + 1),
+          &:nth-child(5n + 5)
+            padding-top: 3.5rem
+            
+          &:nth-child(5n + 3)
+            padding-top: 2rem
+
+      &--type3
+        li
+          &:nth-child(1),
+          &:nth-child(3),
+          &:nth-child(5)
+            align-items: flex-end
+
+          &:nth-child(4)
+            padding-top: 2rem
+
+          &:nth-child(6),
+          &:nth-child(8),
+          &:nth-child(10)
+            padding-top: 2rem
+
+          &:nth-child(7),
+          &:nth-child(9)
+            align-items: flex-end
+
+    li
+      position: relative
+      z-index: 0
+      display: flex
+      align-items: flex-start
+      width:  24.2rem
+      height: 33rem
+      margin-right: 1.3rem
+
+      +sm
+        margin-right: 0
+        margin: 0 .5rem 1.3rem
+        width:  21rem
+        height: 21rem
+
+      &:nth-child(5n)
+        margin-right: 0
+
+        +sm
+          margin: 0 .5rem 1.3rem
+
+      &::before
+        content: ''
+        display: block
+        position: absolute
+        z-index: -1
+        left: 50%
+        top:  0
+        transform: translateX(-50%)
+        width: .3rem
+        height: 100%
+        background: black
+
+        +sm
+          display: none
+
+      img
+        border: 0.4rem solid black
+        background-color: black
+        width:  24.2rem
+        height: 24.2rem
+
+        cursor: pointer
+
+        +sm
+          width:  21rem
+          height: 21rem

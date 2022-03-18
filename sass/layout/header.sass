@@ -1,0 +1,35 @@
+@import "../components/logo"
+@import "../components/nav"
+@import "../components/burger"
+  
+.header
+  padding: 1.8rem 0
+
+  +sm
+    padding: 1.4rem 0 1.8rem
+
+  &-wrap
+    position: relative
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    // Invisible pseudoelement to center navigation
+    &::after
+      content: ''
+      display: block
+      width:  0
+      height: 0
+      visibility: hidden
+
+      +sm
+        display: none
+  
+  &__burger
+    position: relative
+    z-index: 99999
+    display: none
+
+    +sm
+      display: flex

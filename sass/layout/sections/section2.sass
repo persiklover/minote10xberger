@@ -1,0 +1,72 @@
+@import "../../components/work"
+  
+.section2
+  position: relative
+  z-index: 2
+  background: black
+  padding: 9rem 0
+
+  color: white
+
+  +sm
+    padding-bottom: 13rem
+
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    z-index: -1
+    left: 0
+    top:  0
+    width:  100%
+    height: 29.4rem
+    background-image: linear-gradient(0deg, transparent, rgba(white, .2))
+  
+  &__title
+    margin-bottom: 3rem
+  
+  &__phone
+    position: absolute
+    z-index: 3
+    left: 110rem
+    top:  -18rem
+
+    width:  24.6rem
+    height: 60.7rem
+
+    img
+      width:  100%
+      height: 100%
+
+    +sm
+      left: auto
+      right:  0
+      top:   -10rem
+      width:  20.9rem
+      height: 55.7rem
+  
+  &__work
+    margin-top: 10.5rem
+
+    +sm
+      margin-top: -4rem
+
+  &__bottom
+    margin: 8.5rem 0 4rem
+
+  &-bottom
+    display: flex
+    align-items: flex-start
+
+    &__devices
+      margin-left:   10rem
+      margin-top:    -4rem
+      margin-bottom: -5rem
+      width:  24.1em
+      height: 11.7em
+
+    &__devices-mobile
+      margin: 4rem auto 0
+      width:  24.1em
+      height: 11.7em
+      transform: translateX(6rem)

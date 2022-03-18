@@ -1,0 +1,41 @@
+@import "sections/home"
+@import "sections/gallery"
+@import "sections/section1"
+@import "sections/section2"
+@import "sections/section3"
+@import "sections/section4"
+@import "sections/section5"
+@import "sections/section6"
+
+.main
+
+  &__section6
+    margin-top: -14rem
+
+  &-tagline
+    &__title
+      margin: 0
+
+      +robotoLight
+      font-size: 3rem
+      font-weight: 300
+
+    &__suptitle
+      margin: 0
+
+      +robotoBold
+      font-size: 4.4rem
+
+    &__title,
+    &__suptitle
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+
+      span
+        display: block
+        background-color: black
+        padding: .8rem
+        margin: .01em 0
+
+        color: white

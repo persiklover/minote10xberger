@@ -1,0 +1,152 @@
+.work
+  border-top:    0.4rem solid white
+  border-bottom: 0.4rem solid white
+
+  +sm
+    border: none
+
+  &-wrap
+    margin: 0 -12rem
+
+    +sm
+      margin: 0
+
+  &-slider
+
+    &-item
+      margin-top:    -11rem
+      margin-bottom: -6rem
+
+      position: relative
+      transform: translateX(4.5rem)
+
+      +sm
+        margin-top:    -4rem
+        margin-bottom: -4rem
+        transform: translateX(-4.5rem)
+
+      img
+        width:  126.1rem !important
+        height:  76.3rem !important
+
+        +sm
+          width:  (126.1rem * .6) !important
+          height:  (76.3rem * .6) !important
+
+    .owl
+      // nav
+      &-prev,
+      &-next
+        width:  7rem
+        height: 7rem
+        background: none !important
+        position: absolute
+        top: 30rem
+        transform: translateY(-50%)
+
+        +sm
+          top: 41.5rem
+
+        img
+          width:  100%
+          height: 100%
+
+      &-prev
+        left: 0
+        margin-left: -9.5rem
+
+        +sm
+          margin-left: 0
+          left: 17rem
+
+        img
+          transform: rotate(180deg)
+
+      &-next
+        right: 0
+        margin-right: -9.5rem
+
+        +sm
+          margin-right: 0
+          right: 17rem
+    
+      // dots
+      &-dot
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-right: .5rem
+        width:  2rem
+        height: 2rem
+        background: white !important
+        border: .2rem solid white !important
+        border-radius: 50%
+
+        span
+          display: flex
+          width:  .5rem
+          height: .5rem
+          border-radius: 50%
+          background: white
+
+        &.active
+          background: black !important
+
+        &:last-child
+          margin-right: 0
+
+        &s
+          margin: 3rem 0
+          display: flex
+          justify-content: center
+          align-items: center
+  
+  &__more
+    position: absolute
+    background: none
+    border: none
+    padding: 0
+
+    cursor: pointer
+
+    +sm
+      display: none
+
+    img
+      width:  8rem !important
+      height: 8rem !important
+
+      +sm
+        width:  8rem !important
+        height: 8rem !important
+
+    &--1
+      left: 62rem
+      top:  54%
+      transform: translate(-50%, -50%)
+
+      +sm
+        left: 50%
+        top:  45%
+        transform: none
+        display: block
+
+    &--2
+      left: 11rem
+      top:  54%
+      transform: translateY(-50%)
+    
+    &--3
+      right: 21rem
+      top:  54%
+      transform: translateY(-50%)
+    
+    &--4
+      left:  62rem
+      top:   29%
+      transform: translate(-50%, -50%)
+    
+    &--5
+      left:  62rem
+      top:   77%
+      transform: translate(-50%, -50%)

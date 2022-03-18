@@ -1,0 +1,56 @@
+{
+  
+  "ignorePatterns": ["*.test.js"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jquery": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": "error",
+    "no-var": "error",
+    "no-unused-vars": "off",
+    "no-duplicate-imports": "warn",
+    "no-undef": ["error"],
+    "camelcase": "warn",
+    "comma-dangle": ["error", "never"],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "no-empty": "warn",
+    // Пробел перед круглымы скобками при вызове функции
+    "func-call-spacing": ["error", "never"],
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false,
+        "afterColon": true,
+        "mode": "minimum"
+      }
+    ],
+    // Пробел перед открывающей фигурной скобкой
+    "space-before-blocks": "error"
+  },
+  "globals": {
+    "ga": "readonly"
+  }
+}

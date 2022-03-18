@@ -1,0 +1,488 @@
+@import "qr"
+@import "links"
+
+.popup
+  display: none
+
+  &--gallery
+    display: none
+
+    .popup
+
+      &__close
+        +sm
+          position: absolute
+          right: 0
+          top:   4rem
+
+      &-header
+        +sm
+          position: relative
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+
+        &__text
+          margin-right: 3rem
+          flex-shrink: 0
+        
+        &__text2
+          +sm
+            margin-top: 2rem
+
+
+      &-preview
+        position: relative
+        min-height: 12rem
+
+        font-size: 0
+
+        +sm
+          margin: 0 8rem
+
+        img
+          max-width: 100%
+        
+        &__prev,
+        &__next
+          position: absolute
+          z-index: 99999
+          top: 50%
+          transform: translateY(-50%)
+          background: none
+          border: none
+          padding: 0
+
+          cursor: pointer
+
+          img
+            width:  4.7rem
+            height: 8.2rem
+
+        &__prev
+          left: 0
+          margin-left: -10rem
+
+          +sm
+            left: -7.5rem
+            margin-left: 0
+
+          img
+            transform: rotate(180deg)
+
+        &__next
+          right: 0
+          margin-right: -10rem
+
+          +sm
+            right: -7.5rem
+            margin-right: 0
+      
+      &-slider
+        overflow: hidden
+        border-radius: .8rem
+        margin: 0 auto
+
+        +sm
+          border-radius: 1.8rem
+
+      &-footer
+        padding-left:  0
+        padding-right: 0
+        flex-direction: column
+        align-items: flex-start
+
+  &--zoom
+    display: none
+
+    .easter
+      position: absolute
+      z-index: 1
+      left: 0
+      top:  0
+      width:  100%
+      height: 100%
+
+      display: none
+
+
+      transition: transform .1s ease-in
+      will-change: transform
+
+      &.visible
+        display: block
+      
+      .point
+        position: absolute
+        display: block
+        width:  2.5rem
+        height: 2.5rem
+        border: .15rem solid rgba(white, .35)
+        border-radius: 50%
+
+        transition: all .2s ease-in
+
+        cursor: pointer
+
+        &:hover
+          border-color: white
+
+          .point__tooltip
+            opacity: 1
+            user-select: initial
+            pointer-events: all
+
+        &--11
+          left: 51.7rem
+          top:  40.5rem
+
+        &--7
+          left: 47.8rem
+          top:  37rem
+
+        &--10
+          left: 45.6rem
+          top:  29.7rem
+
+          .point__tooltip
+            width: 11rem
+
+        &--9
+          left: 42.5rem
+          top: 42.3rem
+        
+        &--8
+          left: 38.9rem
+          top:  40.5rem
+          .point__tooltip
+            width: 11rem
+
+        &--6
+          left: 37.1rem
+          top:  52.7rem
+          .point__tooltip
+            width: 11rem
+        
+        &--4
+          left: 23.7rem
+          top: 46.4rem
+          .point__tooltip
+            width: 11rem
+        
+        &--5
+          left: 25.6rem
+          top:  38.7rem
+          .point__tooltip
+            width: 11rem
+        
+        &--3
+          left: 22.1rem
+          top:  28.7rem
+          .point__tooltip
+            width: 11rem
+        
+        &--17
+          left: 86.3rem
+          top: 32.5rem
+          .point__tooltip
+            width: 11rem
+        
+        &--19
+          left: 96.4rem
+          top:  29.4rem
+          .point__tooltip
+            width: 11rem
+       
+        &--20
+          left: 100.2rem
+          top: 52rem
+          .point__tooltip
+            width: 11rem
+        
+        &--18
+          left: 88.8rem
+          top: 52.9rem
+          .point__tooltip
+            width: 11rem
+        
+        &--16
+          left: 78.8rem
+          top: 52.8rem
+          .point__tooltip
+            width: 11rem
+        
+        &--13
+          left: 76.9rem
+          top: 44.1rem
+          .point__tooltip
+            width: 11rem
+        
+        &--15
+          left: 80.9rem
+          top: 47.7rem
+          .point__tooltip
+            width: 11rem
+        
+        &--12
+          left: 65.8rem
+          top: 45.3rem
+          .point__tooltip
+            width: 11rem
+
+        &--1
+          left: 67.2rem
+          top: 33.3rem
+          .point__tooltip
+            width: 11rem
+
+        &--2
+          left: 62.2rem
+          top: 31.7rem
+          .point__tooltip
+            width: 11rem
+        
+        &--14
+          left: 77.7rem
+          top: 32.1rem
+          .point__tooltip
+            width: 11rem
+
+        &__tooltip
+          position: absolute
+          left:   100%
+          bottom: 100%
+          background: white
+          width: 15em
+          padding: .75em
+          transform: translate(-.75em, .75em)
+          border-radius: .4em
+
+          opacity: 0
+          user-select: none
+          pointer-events: none
+
+          transition: opacity .2s ease-in
+          will-change: opacity
+
+          +roboto
+          color: black
+          font-size: .5rem
+          font-weight: 300
+
+    .popup
+
+      &-preview
+        position: relative
+        background: #eee
+        border-radius: 1.8rem
+        overflow: hidden
+        min-height: 60rem
+
+        border-radius: 2rem
+        border: 0.5rem solid #000
+
+        font-size: 0
+
+        .loading-overlay
+          display: block
+          position: absolute
+          z-index: 9999
+          left: 0
+          top:  0
+          width:  100%
+          height: 100%
+          background: white
+          display: flex
+          flex-direction: column
+          justify-content: center
+          align-items: center
+
+          color: #130e08
+          font-size: 2rem
+          text-align: center
+
+          opacity: 1
+
+          transition: opacity .3s ease-in-out
+          will-change: opacity
+
+          &.hidden
+            opacity: 0
+            pointer-events: none
+            user-select: none
+
+          &__text
+            margin-bottom: 3rem
+
+          progress
+            display: block
+            box-shadow: 0 0 0 .15rem black
+            background: white
+            width:  66.3rem
+            height: 1rem
+
+          progress::-webkit-progress-bar
+            background-color: white
+
+          progress::-moz-progress-bar
+            background-color: white
+
+          progress::-webkit-progress-value
+            border-radius: 0
+            background-color: #130e08
+
+      &-img
+        max-width: 100%
+
+        transition: transform .1s ease-in
+        will-change: transform
+      
+      &__control
+        position: absolute
+        z-index: 2
+
+        background: #000
+        width:  4.2rem
+        height: 4.2rem
+        border: none
+        padding: 0
+        border-radius: 50%
+
+        color: white
+        font-size: 2.5rem
+
+        cursor: pointer
+      
+      &-zoomin
+      &-zoomout
+        right: 4.1rem
+
+        +sm
+          right: 4.9rem
+
+      &-zoomin
+        top:   1.3rem
+      
+      &-zoomout
+        top:   6.3rem
+      
+      &-left,
+      &-right,
+      &-up,
+      &-down
+        img
+          width:  1.5rem
+          height: 1.5rem
+          +no-select
+
+      &-up,
+      &-down
+        right: 5rem
+
+      &-right
+        right:  1rem
+        bottom: 9rem - 3.5rem
+
+        img
+          transform: rotate(-90deg)
+      
+      &-left
+        right:  9rem
+        bottom: 9rem - 3.5rem
+
+        img
+          transform: rotate(90deg)
+
+      &-up
+        bottom: 13rem - 3.5rem
+
+        img
+          transform: rotate(-180deg)
+      
+      &-down
+        bottom: 5rem - 3.5rem
+      
+      &-footer
+        +sm
+          padding: 3.5rem 0
+          flex-direction: column
+          align-items: flex-start
+        
+        &__chunk
+          +sm
+            width: 100%
+      
+      &-steps
+        +sm
+          width: 100%
+          margin-top:  1.5rem
+          padding-top: 1.5rem
+          padding-left:  2rem
+          border-top: .5rem solid black
+
+  &__logo
+    margin-right: 6.5rem
+
+    +sm
+      display: none
+      margin-right: 0
+
+    img
+      width:  5.7rem
+      height: 7.9rem
+  
+  &__close
+    flex-shrink: 0
+    margin-left: auto
+    width:  6.2rem
+    height: 6.2rem
+    display: flex
+    justify-content: center
+    align-items: center
+    background: black
+    padding: 0
+    border: 0
+    border-radius: 50%
+
+    cursor: pointer
+
+    span
+      +robotoLight
+      color: white
+      font-size: 6rem
+      line-height: 1
+      margin-top: -.15em
+
+  &-header
+    padding: 2.5rem 0
+    display: flex
+    align-items: flex-start
+
+    +sm
+      padding: 4.5rem 0
+
+    &__text
+      margin: 0
+
+      color: #000
+      +roboto
+      font-size: 2rem
+  
+  &-footer
+    padding: 3.6rem 8rem
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+
+    &__chunk
+      width: 50%
+      padding: 0
+      margin: 0
+  
+  &-steps
+
+    &-item
+      margin-bottom: 2.5rem
+
+      &:last-child
+        margin-bottom: 0

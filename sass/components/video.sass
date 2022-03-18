@@ -1,0 +1,49 @@
+.video
+  position: relative
+  width:  100%
+  height: 0
+  padding-bottom: 56.25%
+  background: black
+
+  cursor: pointer
+
+  &:hover &__button
+    transform: translate(-50%, -50%) scale(1.5)
+
+  &__media
+    position: absolute
+    left: 0
+    top:  0
+    width:  100%
+    height: 100%
+    border: none
+  
+  &__button
+    position: absolute
+    z-index: 2
+    left: 50%
+    top:  50%
+    transform: translate(-50%, -50%)
+    transform-origin: center
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: black
+    border: none
+    width: 5.8rem
+    height: 5.8rem
+    border: 0.4rem solid #fff
+    border-radius: 50%
+
+    transition: transform .2s ease-in
+    will-change: transform
+
+    cursor: pointer
+
+    &:focus
+      transform: translate(-50%, -50%) scale(1.5)
+
+    img
+      width:  2.6rem
+      height: 2.5rem
+      transform: translateX(.2rem)
